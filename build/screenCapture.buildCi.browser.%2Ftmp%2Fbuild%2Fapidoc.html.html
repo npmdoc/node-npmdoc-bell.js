@@ -1,0 +1,4267 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>bell.js (v2.0.5)</a>
+</h1>
+<h4>Real-time anomalies(outliers) detection system for periodic time series</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js">module bell.js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.init">
+            function <span class="apidocSignatureSpan">bell.js.</span>init
+            <span class="apidocSignatureSpan">(uptime, _config, events, _logger)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.js.service">
+            function <span class="apidocSignatureSpan">bell.js.</span>js.service
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.crons</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.exampleSender</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.metric</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.middlewares</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.models</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.project</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.protocol</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.receiver</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.rule</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.service.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.util</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.validators</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.</span>js.views</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.config">module bell.js.config</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">bell.js.config.</span>autoReload</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.config.init">
+            function <span class="apidocSignatureSpan">bell.js.config.</span>init
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.config.reload">
+            function <span class="apidocSignatureSpan">bell.js.config.</span>reload
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">bell.js.config.</span>interval</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.config.</span>alerter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.config.</span>analyzer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.config.</span>beanstalkd</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.config.</span>cleaner</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.config.</span>emitter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.config.</span>listener</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.config.</span>sqlite</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.config.</span>ssdb</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.config.</span>webapp</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.crons">module bell.js.crons</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.register">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>register
+            <span class="apidocSignatureSpan">(service)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.startSyncProjects">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>startSyncProjects
+            <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.startSyncReceivers">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>startSyncReceivers
+            <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.startSyncRules">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>startSyncRules
+            <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.startSyncTrendings">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>startSyncTrendings
+            <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.syncProjects">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>syncProjects
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.syncProjectsOnDBFileChanges">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>syncProjectsOnDBFileChanges
+            <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.syncReceivers">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>syncReceivers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.syncReceiversOnDBFileChanges">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>syncReceiversOnDBFileChanges
+            <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.syncRules">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>syncRules
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.syncRulesOnDBFileChanges">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>syncRulesOnDBFileChanges
+            <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.crons.syncTrendings">
+            function <span class="apidocSignatureSpan">bell.js.crons.</span>syncTrendings
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.js.crons.</span>ctx</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.errors">module bell.js.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.errors.dispatch">
+            function <span class="apidocSignatureSpan">bell.js.errors.</span>dispatch
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.exampleSender">module bell.js.exampleSender</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.exampleSender.sendEmail">
+            function <span class="apidocSignatureSpan">bell.js.exampleSender.</span>sendEmail
+            <span class="apidocSignatureSpan">(receiver, project, data, log)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.exampleSender.sendSms">
+            function <span class="apidocSignatureSpan">bell.js.exampleSender.</span>sendSms
+            <span class="apidocSignatureSpan">(receiver, project, data, log)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.index">module bell.js.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.index.register">
+            function <span class="apidocSignatureSpan">bell.js.index.</span>register
+            <span class="apidocSignatureSpan">(service)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.metric">module bell.js.metric</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.metric.register">
+            function <span class="apidocSignatureSpan">bell.js.metric.</span>register
+            <span class="apidocSignatureSpan">(service)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.middlewares">module bell.js.middlewares</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.middlewares.register">
+            function <span class="apidocSignatureSpan">bell.js.middlewares.</span>register
+            <span class="apidocSignatureSpan">(service)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.models">module bell.js.models</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.models.register">
+            function <span class="apidocSignatureSpan">bell.js.models.</span>register
+            <span class="apidocSignatureSpan">(sequelize)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.project">module bell.js.project</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.project.register">
+            function <span class="apidocSignatureSpan">bell.js.project.</span>register
+            <span class="apidocSignatureSpan">(service)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.protocol">module bell.js.protocol</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.protocol.decode">
+            function <span class="apidocSignatureSpan">bell.js.protocol.</span>decode
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.protocol.encode">
+            function <span class="apidocSignatureSpan">bell.js.protocol.</span>encode
+            <span class="apidocSignatureSpan">(datapoints)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.receiver">module bell.js.receiver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.receiver.register">
+            function <span class="apidocSignatureSpan">bell.js.receiver.</span>register
+            <span class="apidocSignatureSpan">(service)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.rule">module bell.js.rule</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.rule.register">
+            function <span class="apidocSignatureSpan">bell.js.rule.</span>register
+            <span class="apidocSignatureSpan">(service)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.service">module bell.js.service</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.service.service">
+            function <span class="apidocSignatureSpan">bell.js.</span>service
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.service.super_">
+            function <span class="apidocSignatureSpan">bell.js.service.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.service.prototype">module bell.js.service.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.service.prototype.connectBeans">
+            function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>connectBeans
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.service.prototype.createBeansClient">
+            function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>createBeansClient
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.service.prototype.createSequelize">
+            function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>createSequelize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.service.prototype.createSocketServer">
+            function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>createSocketServer
+            <span class="apidocSignatureSpan">(port, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.service.prototype.createSsdbPool">
+            function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>createSsdbPool
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.util">module bell.js.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.ReadOnlyArray">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>ReadOnlyArray
+            <span class="apidocSignatureSpan">(array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util._errnoException">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>_errnoException
+            <span class="apidocSignatureSpan">(err, syscall, original)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util._exceptionWithHostPort">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>_exceptionWithHostPort
+            <span class="apidocSignatureSpan">(err, syscall, address, port, additional)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util._extend">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>_extend
+            <span class="apidocSignatureSpan">(target, source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.cleanWith">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>cleanWith
+            <span class="apidocSignatureSpan">(obj, other)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.debug">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.debuglog">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>debuglog
+            <span class="apidocSignatureSpan">(set)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.deprecate">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>deprecate
+            <span class="apidocSignatureSpan">(fn, msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.diffArray">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>diffArray
+            <span class="apidocSignatureSpan">(a, b, eq)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.endsWith">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>endsWith
+            <span class="apidocSignatureSpan">(s, suffix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.error">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.fastMatch">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>fastMatch
+            <span class="apidocSignatureSpan">(s, p)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.fileOnChanges">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>fileOnChanges
+            <span class="apidocSignatureSpan">(file, callback, intervalDarwin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.fileOnChangesWithMinInterval">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>fileOnChangesWithMinInterval
+            <span class="apidocSignatureSpan">(file, callback, interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.fileOnChangesWithMinIntervalAndRunNow">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>fileOnChangesWithMinIntervalAndRunNow
+            <span class="apidocSignatureSpan">(file, callback, interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.format">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>format
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.inherits">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>inherits
+            <span class="apidocSignatureSpan">(ctor, superCtor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.inspect">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>inspect
+            <span class="apidocSignatureSpan">(obj, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isArray">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isArray
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isBoolean">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isBoolean
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isBuffer">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isBuffer
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isDate">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isDate
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isError">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isError
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isFunction">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isFunction
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isNull">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isNull
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isNullOrUndefined">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isNullOrUndefined
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isNumber">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isNumber
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isObject">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isObject
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isPrimitive">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isPrimitive
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isRegExp">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isRegExp
+            <span class="apidocSignatureSpan">(re)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isString">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isString
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isSymbol">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isSymbol
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.isUndefined">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>isUndefined
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.join">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>join
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.loadObjectFromPath">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>loadObjectFromPath
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.log">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.objectLength">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>objectLength
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.patchBeansClient">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>patchBeansClient
+            <span class="apidocSignatureSpan">(c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.print">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>print
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.puts">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>puts
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.setIntervalAndRunNow">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>setIntervalAndRunNow
+            <span class="apidocSignatureSpan">(fn, ms)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.startsWith">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>startsWith
+            <span class="apidocSignatureSpan">(s, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.timerStart">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>timerStart
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.uniqueArray">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>uniqueArray
+            <span class="apidocSignatureSpan">(arr, eq)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.updateNestedObjects">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>updateNestedObjects
+            <span class="apidocSignatureSpan">(obj, other)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.urlDecode">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>urlDecode
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.urlEncode">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>urlEncode
+            <span class="apidocSignatureSpan">(path, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.util.urlParamsEncode">
+            function <span class="apidocSignatureSpan">bell.js.util.</span>urlParamsEncode
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.validators">module bell.js.validators</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateEmail">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateEmail
+            <span class="apidocSignatureSpan">(email)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validatePhone">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validatePhone
+            <span class="apidocSignatureSpan">(phone)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateProjectId">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateProjectId
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateProjectName">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateProjectName
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateReceiverEnableEmail">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverEnableEmail
+            <span class="apidocSignatureSpan">(enableEmail)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateReceiverEnablePhone">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverEnablePhone
+            <span class="apidocSignatureSpan">(enablePhone)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateReceiverId">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverId
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateReceiverName">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverName
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateReceiverUniversal">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverUniversal
+            <span class="apidocSignatureSpan">(universal)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateRuleContent">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateRuleContent
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateRuleId">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateRuleId
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.validators.validateRulePattern">
+            function <span class="apidocSignatureSpan">bell.js.validators.</span>validateRulePattern
+            <span class="apidocSignatureSpan">(pattern)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.js.views">module bell.js.views</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.js.views.register">
+            function <span class="apidocSignatureSpan">bell.js.views.</span>register
+            <span class="apidocSignatureSpan">(service)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js" id="apidoc.module.bell.js">module bell.js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.init" id="apidoc.element.bell.js.init">
+        function <span class="apidocSignatureSpan">bell.js.</span>init
+        <span class="apidocSignatureSpan">(uptime, _config, events, _logger)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (uptime, _config, events, _logger) {
+  logger = _logger || console;
+  debug = _config.debug;
+  config = _config || {};
+  var bell = new Bell();
+  events.on('flush', function(time, data) {
+    bell.flush(time, data);
+  });
+  bell.connect();
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Initialize logging
+//----------------------------------------------------
+log.level = program.logLevel;
+
+//----------------------------------------------------
+// Read configs
+//----------------------------------------------------
+config.<span class="apidocCodeKeywordSpan">init</span>(program.configPath);
+
+//----------------------------------------------------
+// Start service
+//----------------------------------------------------
+service = {
+  listener: require('./lib/listener'),
+  analyzer: require('./lib/analyzer'),
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.js.service" id="apidoc.element.bell.js.js.service">
+        function <span class="apidocSignatureSpan">bell.js.</span>js.service
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Service() {
+  events.EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.config" id="apidoc.module.bell.js.config">module bell.js.config</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.config.init" id="apidoc.element.bell.js.config.init">
+        function <span class="apidocSignatureSpan">bell.js.config.</span>init
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (file) {
+  if (file) {
+    if (!config._file)
+      config._file = file;
+
+    config.reload();
+
+    util.fileOnChanges(config._file, function() {
+      if (config.autoReload)
+        config.reload();
+    });
+  } else {
+    log.warn("using default config..");
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Initialize logging
+//----------------------------------------------------
+log.level = program.logLevel;
+
+//----------------------------------------------------
+// Read configs
+//----------------------------------------------------
+config.<span class="apidocCodeKeywordSpan">init</span>(program.configPath);
+
+//----------------------------------------------------
+// Start service
+//----------------------------------------------------
+service = {
+  listener: require('./lib/listener'),
+  analyzer: require('./lib/analyzer'),
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.config.reload" id="apidoc.element.bell.js.config.reload">
+        function <span class="apidocSignatureSpan">bell.js.config.</span>reload
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reload = function () {
+  assert(config._file);
+  log.info("reading config from %s..", config._file);
+  var conf = util.loadObjectFromPath(config._file);
+  util.updateNestedObjects(config, conf);
+  config.emitter.emit('reload');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {String} file
+ */
+config.init = function(file) {
+if (file) {
+  if (!config._file)
+    config._file = file;
+
+  config.<span class="apidocCodeKeywordSpan">reload</span>();
+
+  util.fileOnChanges(config._file, function() {
+    if (config.autoReload)
+      config.reload();
+  });
+} else {
+  log.warn("using default config..");
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.crons" id="apidoc.module.bell.js.crons">module bell.js.crons</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.register" id="apidoc.element.bell.js.crons.register">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>register
+        <span class="apidocSignatureSpan">(service)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (service) {
+  ssdb = service.ssdb;
+  sequelize = service.sequelize;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.<span class="apidocCodeKeywordSpan">register</span>(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.startSyncProjects" id="apidoc.element.bell.js.crons.startSyncProjects">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>startSyncProjects
+        <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function startSyncProjects(cb, milliSeconds) {
+  util.setIntervalAndRunNow(co.wrap(function *() {
+    yield syncProjects();
+    if (cb) cb();
+  }), milliSeconds || consts.syncIntervalDefault);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.startSyncReceivers" id="apidoc.element.bell.js.crons.startSyncReceivers">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>startSyncReceivers
+        <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function startSyncReceivers(cb, milliSeconds) {
+  util.setIntervalAndRunNow(co.wrap(function *() {
+    yield syncReceivers();
+    if (cb) cb();
+  }), milliSeconds || consts.syncIntervalDefault);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.startSyncRules" id="apidoc.element.bell.js.crons.startSyncRules">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>startSyncRules
+        <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function startSyncRules(cb, milliSeconds) {
+  util.setIntervalAndRunNow(co.wrap(function *() {
+    yield syncRules();
+    if (cb) cb();
+  }), milliSeconds || consts.syncIntervalDefault);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.startSyncTrendings" id="apidoc.element.bell.js.crons.startSyncTrendings">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>startSyncTrendings
+        <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function startSyncTrendings(cb, milliSeconds) {
+  util.setIntervalAndRunNow(co.wrap(function *() {
+    yield syncTrendings();
+    if (cb) cb();
+  }), milliSeconds || 1000*config.interval);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    models.register(this.sequelize);
+    crons.register(this);
+    middlewares.register(this);
+    handlers.register(this);
+    views.register(this);
+    this.app.listen(config.webapp.port);
+    yield this.sequelize.sync();
+    crons.<span class="apidocCodeKeywordSpan">startSyncTrendings</span>();
+  }
+};
+
+module.exports = new WebApp();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.syncProjects" id="apidoc.element.bell.js.crons.syncProjects">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>syncProjects
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* syncProjects() {
+  var timer = util.timerStart();
+  var projects = yield models.Project.findAll();
+  var i, project, receivers, universals;
+
+  for (i = 0; i &lt; projects.length; i++) {
+    project = projects[i];
+    project.rules = yield project.getRules();
+    receivers = yield project.getReceivers();
+    universals = yield models.Receiver.findAll({where: {universal: true}});
+    [].unshift.apply(receivers, universals);
+    project.receivers = receivers;
+  }
+
+  ctx.projects = projects;
+  log.info("%dms sync projects done, %d items", timer.elapsed(), projects.length);
+  return ctx.projects;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.syncProjectsOnDBFileChanges" id="apidoc.element.bell.js.crons.syncProjectsOnDBFileChanges">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>syncProjectsOnDBFileChanges
+        <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function syncProjectsOnDBFileChanges(cb, milliSeconds) {
+  util.fileOnChangesWithMinIntervalAndRunNow(config.sqlite.file, co.wrap(function *() {
+    yield syncProjects();
+    if (cb) cb();
+  }), milliSeconds || consts.syncIntervalDefault);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+    mean: item[2],
+  });
+});
+yield this.sequelize.sync();
+crons.<span class="apidocCodeKeywordSpan">syncProjectsOnDBFileChanges</span>();
+};
+
+Alerter.prototype.loadSender = function() {
+if (config.alerter.sender) {
+  log.info("load sender from %s", config.alerter.sender);
+  this.sender = require(config.alerter.sender);
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.syncReceivers" id="apidoc.element.bell.js.crons.syncReceivers">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>syncReceivers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* syncReceivers() {
+  var timer = util.timerStart();
+  var receivers = yield models.Receiver.findAll();
+  var i, receiver;
+
+  for (i = 0; i &lt; receivers.length; i++) {
+    receiver = receivers[i];
+    receiver.projects = receiver.getProjects();
+  }
+  ctx.receivers = receivers;
+  log.info("%dms sync receivers done, %d items", timer.elapsed(), receivers.length);
+  return ctx.receivers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.syncReceiversOnDBFileChanges" id="apidoc.element.bell.js.crons.syncReceiversOnDBFileChanges">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>syncReceiversOnDBFileChanges
+        <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function syncReceiversOnDBFileChanges(cb, milliSeconds) {
+  util.fileOnChangesWithMinIntervalAndRunNow(config.sqlite.file, co.wrap(function *() {
+    yield syncReceivers();
+    if (cb) cb();
+  }), milliSeconds || consts.syncIntervalDefault);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.syncRules" id="apidoc.element.bell.js.crons.syncRules">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>syncRules
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* syncRules() {
+  var timer = util.timerStart();
+  ctx.rules = yield models.Rule.findAll({
+    where: {
+      ProjectId: {$ne: null}
+    }
+  });
+  log.info("%dms sync rules done, %d items", timer.elapsed(), ctx.rules.length);
+  return ctx.rules;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.syncRulesOnDBFileChanges" id="apidoc.element.bell.js.crons.syncRulesOnDBFileChanges">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>syncRulesOnDBFileChanges
+        <span class="apidocSignatureSpan">(cb, milliSeconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function syncRulesOnDBFileChanges(cb, milliSeconds) {
+  util.fileOnChangesWithMinIntervalAndRunNow(config.sqlite.file, co.wrap(function *() {
+    yield syncRules();
+    if (cb) cb();
+  }), milliSeconds || consts.syncIntervalDefault);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+crons.register(this);
+yield this.sequelize.sync();
+// clear cache on rule patterns changes
+var diffRulePattern = function(a, b) {
+  return a.pattern === b.pattern;
+};
+// start sync rules
+crons.<span class="apidocCodeKeywordSpan">syncRulesOnDBFileChanges</span>(function() {
+  if (config.listener.whitelist.length)
+    return;
+  if (util.diffArray(crons.ctx.rules, self._rules, diffRulePattern)) {
+    self._cache = {};
+    self._rulesWhiteList = [];
+    for (var i = 0; i &lt; crons.ctx.rules.length; i++) {
+      self._rulesWhiteList.push(crons.ctx.rules[i].pattern);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.crons.syncTrendings" id="apidoc.element.bell.js.crons.syncTrendings">
+        function <span class="apidocSignatureSpan">bell.js.crons.</span>syncTrendings
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* syncTrendings() {
+  var timer = util.timerStart();
+  var hash = config.ssdb.prefix + 'trend';
+  var list = yield ssdb.acquire().hgetall(hash);
+  var dict = {}, i;
+
+  for (i = 0; i &lt; list.length; i += 2) {
+    dict[list[i]] = list[i + 1];
+  }
+
+  ctx.trendings = dict;
+  log.info("%dms sync trendings done, %d items", timer.elapsed(), util.objectLength(dict));
+  return ctx.trendings;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.errors" id="apidoc.module.bell.js.errors">module bell.js.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.errors.dispatch" id="apidoc.element.bell.js.errors.dispatch">
+        function <span class="apidocSignatureSpan">bell.js.errors.</span>dispatch
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispatch = function (err) {
+  if (!err)
+    return;
+  var i;
+
+  for (i = 0; i &lt; fatals.length; i++) {
+    if (err instanceof fatals[i]) {
+      log.error(err.stack);
+      process.exit(1);
+      return;
+    }
+  }
+
+  for (i = 0; i &lt; skips.length; i++) {
+    if (err instanceof skips[i]) {
+      log.error(err.stack);
+      return;
+    }
+  }
+
+  throw err;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (!service) {
+    program.help();
+  }
+
+  yield service.serve();
+}).catch(function(err) {
+  errors.<span class="apidocCodeKeywordSpan">dispatch</span>(err);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.exampleSender" id="apidoc.module.bell.js.exampleSender">module bell.js.exampleSender</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.exampleSender.sendEmail" id="apidoc.element.bell.js.exampleSender.sendEmail">
+        function <span class="apidocSignatureSpan">bell.js.exampleSender.</span>sendEmail
+        <span class="apidocSignatureSpan">(receiver, project, data, log)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendEmail = function (receiver, project, data, log) {
+  var email = receievr.email;
+  var projectName = project.name;
+  var date = new Date(data.stamp * 1000).toTimeString().slice(0, 8);
+  var value = data.value.toFixed(2);
+  var trend = data.trend.toFixed(2);
+  var mean = data.mean.toFixed(2);
+  // format message and send email
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    for (j = 0; j &lt; project.rules.length; j++) {
+rule = project.rules[j];
+if (this.test(data, rule) &amp;&amp;
+    ((data.stamp - this.stats[data.name]) &gt;= config.alerter.interval)) {
+      for (k = 0; k &lt; project.receivers.length; k++) {
+        receiver = project.receivers[k];
+        if (this.sender.sendEmail &amp;&amp; receiver.enableEmail)
+          this.sender.<span class="apidocCodeKeywordSpan">sendEmail</span>(receiver, project, data, log);
+        if (this.sender.sendSms &amp;&amp; receiver.enablePhone)
+          this.sender.sendSms(receiver, project, data, log);
+      }
+      if (this.sender.sendCallback) {
+        this.sender.sendCallback(project, data, log);
+      }
+    this.stats[data.name] = data.stamp;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.exampleSender.sendSms" id="apidoc.element.bell.js.exampleSender.sendSms">
+        function <span class="apidocSignatureSpan">bell.js.exampleSender.</span>sendSms
+        <span class="apidocSignatureSpan">(receiver, project, data, log)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendSms = function (receiver, project, data, log) {
+  // similar with `sendEmail`
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this.test(data, rule) &amp;&amp;
+      ((data.stamp - this.stats[data.name]) &gt;= config.alerter.interval)) {
+        for (k = 0; k &lt; project.receivers.length; k++) {
+          receiver = project.receivers[k];
+          if (this.sender.sendEmail &amp;&amp; receiver.enableEmail)
+            this.sender.sendEmail(receiver, project, data, log);
+          if (this.sender.sendSms &amp;&amp; receiver.enablePhone)
+            this.sender.<span class="apidocCodeKeywordSpan">sendSms</span>(receiver, project, data, log);
+        }
+        if (this.sender.sendCallback) {
+          this.sender.sendCallback(project, data, log);
+        }
+      this.stats[data.name] = data.stamp;
+      }
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.index" id="apidoc.module.bell.js.index">module bell.js.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.index.register" id="apidoc.element.bell.js.index.register">
+        function <span class="apidocSignatureSpan">bell.js.index.</span>register
+        <span class="apidocSignatureSpan">(service)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (service) {
+  errors.register(service);
+  config.register(service);
+  metric.register(service);
+  project.register(service);
+  receiver.register(service);
+  rule.register(service);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.<span class="apidocCodeKeywordSpan">register</span>(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.metric" id="apidoc.module.bell.js.metric">module bell.js.metric</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.metric.register" id="apidoc.element.bell.js.metric.register">
+        function <span class="apidocSignatureSpan">bell.js.metric.</span>register
+        <span class="apidocSignatureSpan">(service)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (service) {
+  ssdb = service.ssdb;
+  service.app.use(route.get(url('/api/metric/names'), getNames));
+  service.app.use(route.get(url('/api/metric/data'), getData));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.<span class="apidocCodeKeywordSpan">register</span>(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.middlewares" id="apidoc.module.bell.js.middlewares">module bell.js.middlewares</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.middlewares.register" id="apidoc.element.bell.js.middlewares.register">
+        function <span class="apidocSignatureSpan">bell.js.middlewares.</span>register
+        <span class="apidocSignatureSpan">(service)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (service) {
+  service.app.use(parser());
+  service.app.use(logger);
+  service.app.use(error401);
+  service.app.use(mount(url('/admin'), auth(config.webapp.auth)));
+  service.app.use(mount(url('/api/admin'), auth(config.webapp.auth)));
+  service.app.use(mount(url('/public'), serve(consts.staticDir)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.<span class="apidocCodeKeywordSpan">register</span>(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.models" id="apidoc.module.bell.js.models">module bell.js.models</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.models.register" id="apidoc.element.bell.js.models.register">
+        function <span class="apidocSignatureSpan">bell.js.models.</span>register
+        <span class="apidocSignatureSpan">(sequelize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (sequelize) {
+  var Project = sequelize.define('Project', {
+    name: {type: Sequelize.STRING, unique: true},
+  });
+
+  var Rule = sequelize.define('Rule', {
+    pattern: {type: Sequelize.STRING, unique: true},
+    up: {type: Sequelize.BOOLEAN, defaultValue: false},
+    down: {type: Sequelize.BOOLEAN, defaultValue: false},
+    min: {type: Sequelize.DOUBLE, defaultValue: null, allowNull: true},
+    max: {type: Sequelize.DOUBLE, defaultValue: null, allowNull: true},
+  });
+
+  var Receiver = sequelize.define('Receiver', {
+    name: {type: Sequelize.STRING, unique: true},
+    email: {type: Sequelize.STRING, unique: true},
+    phone: {type: Sequelize.STRING, unique: true},
+    universal: {type: Sequelize.BOOLEAN, defaultValue: false},
+    enableEmail: {type: Sequelize.BOOLEAN, defaultValue: false},
+    enablePhone: {type: Sequelize.BOOLEAN, defaultValue: false},
+  });
+
+  Project.hasMany(Rule, {as: 'Rules'});
+  Project.belongsToMany(Receiver, {through: 'ReceiverProjects'});
+  Receiver.belongsToMany(Project, {through: 'ReceiverProjects'});
+
+  exports.Project = Project;
+  exports.Rule = Rule;
+  exports.Receiver = Receiver;
+  return exports;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.<span class="apidocCodeKeywordSpan">register</span>(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.project" id="apidoc.module.bell.js.project">module bell.js.project</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.project.register" id="apidoc.element.bell.js.project.register">
+        function <span class="apidocSignatureSpan">bell.js.project.</span>register
+        <span class="apidocSignatureSpan">(service)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (service) {
+  service.app.use(route.get(url('/api/projects'), getAll));
+  service.app.use(route.get(url('/api/project/:id'), get));
+  service.app.use(route.post(url('/api/admin/project'), create));
+  service.app.use(route.del(url('/api/admin/project/:id'), del));
+  service.app.use(route.patch(url('/api/admin/project/:id'), patch));
+  service.app.use(route.get(url('/api/admin/project/:id/receivers'), getReceivers));
+  service.app.use(route.get(url('/api/admin/project/:id/rules'), getRules));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.<span class="apidocCodeKeywordSpan">register</span>(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.protocol" id="apidoc.module.bell.js.protocol">module bell.js.protocol</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.protocol.decode" id="apidoc.element.bell.js.protocol.decode">
+        function <span class="apidocSignatureSpan">bell.js.protocol.</span>decode
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decode(buf) {  // jshint ignore: line
+  var chunks = [],
+      chunk,
+      len = buf.length,
+      p = 0, // to loop over buffer
+      q = 0, // the index of first '\n'
+      n = 0, // the index of next chunk
+      i = 0,
+      size,
+      t,
+      data,
+      unfinished,
+      datapoints;
+
+  while (p &lt; len) {
+    q = [].indexOf.apply(buf, [10, p]);
+
+    if (q &lt; 0) {
+      // no '\n' was found
+      break;
+    }
+
+    // data size infomation
+    size = +buf.slice(p, q);
+
+    // skip '\n'
+    t = p = q + 1;  // jshint ignore: line
+
+    // p: move to end of data
+    p += size;
+
+    if (p &gt; len) {
+      // exceeds length
+      break;
+    }
+
+    data = buf.slice(t, p);
+    chunks.push(data.toString());
+
+    // record the index of next unit
+    n = p;
+  }
+
+  unfinished = buf.slice(n);
+
+  datapoints = [];
+
+  for (i = 0; i &lt; chunks.length; i++) {
+    chunk = JSON.parse(chunks[i]);
+    [].push.apply(datapoints, chunk);
+  }
+  return [datapoints, unfinished];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {Buffer} buf
+* @return {Array}
+*/
+ConnBufferParser.prototype.parse = function(buf) {
+ var result;
+ // pick up the unfinished buffer last time
+ buf = Buffer.concat([this.unfinished, buf]);
+ result = protocol.<span class="apidocCodeKeywordSpan">decode</span>(buf);
+ this.unfinished = result[1];
+ return result[0];
+};
+
+/**
+* Base service class.
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.protocol.encode" id="apidoc.element.bell.js.protocol.encode">
+        function <span class="apidocSignatureSpan">bell.js.protocol.</span>encode
+        <span class="apidocSignatureSpan">(datapoints)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encode(datapoints) {
+  var str = JSON.stringify(datapoints);
+  var len = Buffer.byteLength(str);
+  var buf = new Buffer([len, str].join('\n'));
+  return buf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Analyzer.prototype.alert = function(datapoint, trend, mean) {
+  var self = this, buffer;
+  if (!this.alerterConn) {
+    this.connectAlerter(function(){
+      self.alert(datapoint, trend, mean);
+    });
+  } else {
+    buffer = protocol.<span class="apidocCodeKeywordSpan">encode</span>([datapoint, trend, mean]);
+    this.alerterConn.write(buffer, 'utf8', function(){
+      log.info('send to alerter: %s', [datapoint, trend, mean]);
+    });
+  }
+};
+
+module.exports = new Analyzer();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.receiver" id="apidoc.module.bell.js.receiver">module bell.js.receiver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.receiver.register" id="apidoc.element.bell.js.receiver.register">
+        function <span class="apidocSignatureSpan">bell.js.receiver.</span>register
+        <span class="apidocSignatureSpan">(service)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (service) {
+  service.app.use(route.get(url('/api/admin/receivers'), getAll));
+  service.app.use(route.post(url('/api/admin/project/:id/receiver'), add));
+  service.app.use(route.post(url('/api/admin/receiver'), create));
+  service.app.use(route.del(url('/api/admin/project/:projectId/receiver/:receiverId'), remove));
+  service.app.use(route.get(url('/api/admin/receiver/:id'), get));
+  service.app.use(route.get(url('/api/admin/receiver/:id/projects'), getProjects));
+  service.app.use(route.patch(url('/api/admin/receiver/:id'), patch));
+  service.app.use(route.del(url('/api/admin/receiver/:id'), del));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.<span class="apidocCodeKeywordSpan">register</span>(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.rule" id="apidoc.module.bell.js.rule">module bell.js.rule</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.rule.register" id="apidoc.element.bell.js.rule.register">
+        function <span class="apidocSignatureSpan">bell.js.rule.</span>register
+        <span class="apidocSignatureSpan">(service)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (service) {
+  service.app.use(route.post(url('/api/admin/project/:id/rule'), add));
+  service.app.use(route.del(url('/api/admin/rule/:id'), del));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.<span class="apidocCodeKeywordSpan">register</span>(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.service" id="apidoc.module.bell.js.service">module bell.js.service</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.service.service" id="apidoc.element.bell.js.service.service">
+        function <span class="apidocSignatureSpan">bell.js.</span>service
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Service() {
+  events.EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.service.super_" id="apidoc.element.bell.js.service.super_">
+        function <span class="apidocSignatureSpan">bell.js.service.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.service.prototype" id="apidoc.module.bell.js.service.prototype">module bell.js.service.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.service.prototype.connectBeans" id="apidoc.element.bell.js.service.prototype.connectBeans">
+        function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>connectBeans
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* (action) {
+  var self = this,
+      beans = this.beans,
+      tube = config.beanstalkd.tube;
+  action = action || 'use';
+
+  beans.on('connect', function() {
+    beans[action](tube, function(err) {
+      if (err)
+        throw err;
+      log.info('beanstalkd connected, %s tube %s', action, tube);
+      self.emit('beans connected');
+    });
+  }).connect();
+
+  // yield until beans was connected
+  yield function(done) {
+    self.on('beans connected', done);
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   for (i = 0; i &lt; config.analyzer.workers; i++) {
+     worker = cluster.fork();
+     log.info("forked worker process: %d", worker.process.pid);
+   }
+ } else {
+   this.createSsdbPool();
+   this.createBeansClient();
+   yield this.<span class="apidocCodeKeywordSpan">connectBeans</span>('watch');
+   yield this.work();
+ }
+};
+
+/**
+* Reserve job from beanstalk and do work.
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.service.prototype.createBeansClient" id="apidoc.element.bell.js.service.prototype.createBeansClient">
+        function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>createBeansClient
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createBeansClient = function () {
+  var host = config.beanstalkd.host;
+  var port = config.beanstalkd.port;
+  this.beans = new fivebeans.client(host, port);
+  util.patchBeansClient(this.beans);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ if (cluster.isMaster) {
+   for (i = 0; i &lt; config.analyzer.workers; i++) {
+     worker = cluster.fork();
+     log.info("forked worker process: %d", worker.process.pid);
+   }
+ } else {
+   this.createSsdbPool();
+   this.<span class="apidocCodeKeywordSpan">createBeansClient</span>();
+   yield this.connectBeans('watch');
+   yield this.work();
+ }
+};
+
+/**
+* Reserve job from beanstalk and do work.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.service.prototype.createSequelize" id="apidoc.element.bell.js.service.prototype.createSequelize">
+        function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>createSequelize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSequelize = function () {
+  this.sequelize = new Sequelize(null, null, null, {
+    dialect: 'sqlite',
+    storage: config.sqlite.file,
+    logging: false,
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.loadSender();
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.<span class="apidocCodeKeywordSpan">createSequelize</span>();
+models.register(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.service.prototype.createSocketServer" id="apidoc.element.bell.js.service.prototype.createSocketServer">
+        function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>createSocketServer
+        <span class="apidocSignatureSpan">(port, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSocketServer = function (port, cb) {
+  this.sock = net.createServer(function(conn) {
+    var fd = conn._handle.fd;
+    log.info("new connection established (fd %d)", fd);
+    if (!conn._bufferParser) {
+      conn._bufferParser = new ConnBufferParser();
+    }
+    //------------------ conn on data -----------------------
+    conn.on('data', function(buf) {
+      var datapoints;
+      try {
+        datapoints = conn._bufferParser.parse(buf);
+      } catch (e) {
+        log.warn("invalid input: %s", buf.slice(0, 45));
+        return;
+      }
+      cb(datapoints);
+    });
+    //------------------ conn on close -----------------------
+    conn.on('close', function() {
+      delete conn._bufferParser;
+      log.info("client disconnected (fd %d)", fd);
+    });
+  })
+  //------------------ server on error -----------------------
+  .on('error', function(err) {
+    log.error('socket error: %s', err);
+  })
+  //-------------------- bind server -----------------------
+  .listen(port, function() {
+    log.info("listening on port %d..", port);
+  });
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.register(this.sequelize);
+crons.register(this);
+this.<span class="apidocCodeKeywordSpan">createSocketServer</span>(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+    mean: item[2],
+  });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.service.prototype.createSsdbPool" id="apidoc.element.bell.js.service.prototype.createSsdbPool">
+        function <span class="apidocSignatureSpan">bell.js.service.prototype.</span>createSsdbPool
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSsdbPool = function () {
+  var options = {
+    port: config.ssdb.port,
+    host: config.ssdb.host,
+    size: config.ssdb.size,
+    promisify: true
+  };
+
+  if (config.ssdb.auth &amp;&amp; config.ssdb.auth.length &gt; 0) {
+    options.auth = config.ssdb.auth;
+  }
+  this.ssdb = ssdb.createPool(options);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (cluster.isMaster) {
+    for (i = 0; i &lt; config.analyzer.workers; i++) {
+      worker = cluster.fork();
+      log.info("forked worker process: %d", worker.process.pid);
+    }
+  } else {
+    this.<span class="apidocCodeKeywordSpan">createSsdbPool</span>();
+    this.createBeansClient();
+    yield this.connectBeans('watch');
+    yield this.work();
+  }
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.util" id="apidoc.module.bell.js.util">module bell.js.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.ReadOnlyArray" id="apidoc.element.bell.js.util.ReadOnlyArray">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>ReadOnlyArray
+        <span class="apidocSignatureSpan">(array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReadOnlyArray(array) {
+  this.array = array;
+  this.cache = {};
+  this.length = array.length;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Analyzer.prototype.div3sigma = function(series) {
+var strict = config.analyzer.strict;
+var startSize = config.analyzer.startSize;
+
+if (series.length === 0)
+  return [0, 0];
+
+var arr = new util.<span class="apidocCodeKeywordSpan">ReadOnlyArray</span>(series);
+var mean = arr.mean();
+var std = arr.std();
+
+if (series.length &lt; startSize) {
+  return [0, mean];
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util._errnoException" id="apidoc.element.bell.js.util._errnoException">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>_errnoException
+        <span class="apidocSignatureSpan">(err, syscall, original)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_errnoException = function (err, syscall, original) {
+  var errname = uv.errname(err);
+  var message = `${syscall} ${errname}`;
+  if (original)
+    message += ' ' + original;
+  var e = new Error(message);
+  e.code = errname;
+  e.errno = errname;
+  e.syscall = syscall;
+  return e;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util._exceptionWithHostPort" id="apidoc.element.bell.js.util._exceptionWithHostPort">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>_exceptionWithHostPort
+        <span class="apidocSignatureSpan">(err, syscall, address, port, additional)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_exceptionWithHostPort = function (err, syscall, address, port, additional) {
+  var details;
+  if (port &amp;&amp; port &gt; 0) {
+    details = `${address}:${port}`;
+  } else {
+    details = address;
+  }
+
+  if (additional) {
+    details += ` - Local (${additional})`;
+  }
+  var ex = exports._errnoException(err, syscall, details);
+  ex.address = address;
+  if (port) {
+    ex.port = port;
+  }
+  return ex;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util._extend" id="apidoc.element.bell.js.util._extend">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>_extend
+        <span class="apidocSignatureSpan">(target, source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_extend = function (target, source) {
+  // Don't do anything if source isn't an object
+  if (source === null || typeof source !== 'object') return target;
+
+  var keys = Object.keys(source);
+  var i = keys.length;
+  while (i--) {
+    target[keys[i]] = source[keys[i]];
+  }
+  return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.fileOnChangesWithMinIntervalAndRunNow = fileOnChangesWithMinIntervalAndRunNow;
+exports.patchBeansClient = patchBeansClient;
+exports.ReadOnlyArray = ReadOnlyArray;
+exports.setIntervalAndRunNow = setIntervalAndRunNow;
+exports.timerStart = timerStart;
+
+// extend all utils from standlib util
+util.<span class="apidocCodeKeywordSpan">_extend</span>(module.exports, util);
+
+//------------------------------------------
+// Objects
+//------------------------------------------
+
+function objectLength(obj) {
+return Object.keys(obj).length;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.cleanWith" id="apidoc.element.bell.js.util.cleanWith">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>cleanWith
+        <span class="apidocSignatureSpan">(obj, other)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cleanWith(obj, other) {
+  for (var key in obj) {
+    if (key in other &amp;&amp; obj.hasOwnProperty(key) &amp;&amp; obj[key] === other[key])
+      delete obj[key];
+  }
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {Object} params // params
+* @param {Object} pairs // {paramName: paramNewValue}
+* @return {String}
+*/
+function switchParams(params, pairs) {
+ var defaults = normalizeParams();
+ var newParams = util._extend(clone(params), pairs);
+ return util.<span class="apidocCodeKeywordSpan">cleanWith</span>(newParams, defaults);
+}
+
+//------------------------------------------
+// View handlers
+//------------------------------------------
+/**
+* @view /
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.debug" id="apidoc.element.bell.js.util.debug">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  warned = exports.printDeprecationMessage(msg, warned, deprecated);
+  if (new.target) {
+    return Reflect.construct(fn, arguments, new.target);
+  }
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Listener.prototype._match = function(name) {
+var blacklist = config.listener.blacklist,
+    whitelist = config.listener.whitelist,
+    i;
+
+for (i = 0; i &lt; blacklist.length; i++) {
+  if (util.fastMatch(name, blacklist[i])) {
+    log.<span class="apidocCodeKeywordSpan">debug</span>("%j hit black pattern %j", name, blacklist[i]);
+    return false;
+  }
+}
+
+if (!whitelist.length) {
+  whitelist = this._rulesWhiteList;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.debuglog" id="apidoc.element.bell.js.util.debuglog">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>debuglog
+        <span class="apidocSignatureSpan">(set)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debuglog = function (set) {
+  if (debugEnviron === undefined)
+    debugEnviron = process.env.NODE_DEBUG || '';
+  set = set.toUpperCase();
+  if (!debugs[set]) {
+    if (new RegExp(`\\b${set}\\b`, 'i').test(debugEnviron)) {
+      var pid = process.pid;
+      debugs[set] = function() {
+        var msg = exports.format.apply(exports, arguments);
+        console.error('%s %d: %s', set, pid, msg);
+      };
+    } else {
+      debugs[set] = function() {};
+    }
+  }
+  return debugs[set];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.deprecate" id="apidoc.element.bell.js.util.deprecate">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>deprecate
+        <span class="apidocSignatureSpan">(fn, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deprecate = function (fn, msg) {
+  // Allow for deprecating things in the process of starting up.
+  if (global.process === undefined) {
+    return function() {
+      return exports._deprecate(fn, msg).apply(this, arguments);
+    };
+  }
+
+  if (process.noDeprecation === true) {
+    return fn;
+  }
+
+  var warned = false;
+  function deprecated() {
+    warned = exports.printDeprecationMessage(msg, warned, deprecated);
+    if (new.target) {
+      return Reflect.construct(fn, arguments, new.target);
+    }
+    return fn.apply(this, arguments);
+  }
+
+  // The wrapper will keep the same prototype as fn to maintain prototype chain
+  Object.setPrototypeOf(deprecated, fn);
+  if (fn.prototype) {
+    // Setting this (rather than using Object.setPrototype, as above) ensures
+    // that calling the unwrapped constructor gives an instanceof the wrapped
+    // constructor.
+    deprecated.prototype = fn.prototype;
+  }
+
+  return deprecated;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.diffArray" id="apidoc.element.bell.js.util.diffArray">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>diffArray
+        <span class="apidocSignatureSpan">(a, b, eq)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function diffArray(a, b, eq) {
+  if (a.length !== b.length)
+    return true;
+
+  var i, j, found;
+
+  eq = eq || function(x, y) {
+    return x === y;
+  };
+
+  for (i = 0; i &lt; b.length; i++) {
+    found = false;
+    for (j = 0; j &lt; b.length; j++) {
+      if (eq(a[i], b[j])) {
+        found = true;
+      }
+    }
+    if (!found)
+      return true;
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var diffRulePattern = function(a, b) {
+  return a.pattern === b.pattern;
+};
+// start sync rules
+crons.syncRulesOnDBFileChanges(function() {
+  if (config.listener.whitelist.length)
+    return;
+  if (util.<span class="apidocCodeKeywordSpan">diffArray</span>(crons.ctx.rules, self._rules, diffRulePattern)) {
+    self._cache = {};
+    self._rulesWhiteList = [];
+    for (var i = 0; i &lt; crons.ctx.rules.length; i++) {
+      self._rulesWhiteList.push(crons.ctx.rules[i].pattern);
+    }
+    log.info("update whitelist cache on rules changes");
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.endsWith" id="apidoc.element.bell.js.util.endsWith">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>endsWith
+        <span class="apidocSignatureSpan">(s, suffix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function endsWith(s, suffix) {
+  return s.indexOf(suffix, s.length - suffix.length) !== -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.error" id="apidoc.element.bell.js.util.error">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  warned = exports.printDeprecationMessage(msg, warned, deprecated);
+  if (new.target) {
+    return Reflect.construct(fn, arguments, new.target);
+  }
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+datapoint[1].push(multi);
+
+var key;
+try {
+  key = yield this.save(datapoint, trend);
+} catch (err){
+  if (err instanceof ssdb.SSDBError) {
+    log.<span class="apidocCodeKeywordSpan">error</span>("failed to save %s: %s", name, err.message);
+  }
+}
+
+if (Math.abs(multi) &gt; 1) {
+  this.alert(datapoint, trend, mean);
+}
+return [name, key];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.fastMatch" id="apidoc.element.bell.js.util.fastMatch">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>fastMatch
+        <span class="apidocSignatureSpan">(s, p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fastMatch(s, p) {
+  var arr = p.split('*');
+  var i, j;
+  for (i = 0, j = 0; i &lt; arr.length; i++) {
+    j = s.indexOf(arr[i], j);
+    if (j &lt; 0)
+      return false;
+    j += arr[i].length;
+  }
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+Listener.prototype._match = function(name) {
+var blacklist = config.listener.blacklist,
+    whitelist = config.listener.whitelist,
+    i;
+
+for (i = 0; i &lt; blacklist.length; i++) {
+  if (util.<span class="apidocCodeKeywordSpan">fastMatch</span>(name, blacklist[i])) {
+    log.debug("%j hit black pattern %j", name, blacklist[i]);
+    return false;
+  }
+}
+
+if (!whitelist.length) {
+  whitelist = this._rulesWhiteList;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.fileOnChanges" id="apidoc.element.bell.js.util.fileOnChanges">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>fileOnChanges
+        <span class="apidocSignatureSpan">(file, callback, intervalDarwin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fileOnChanges(file, callback, intervalDarwin) {
+  if (process.platform == 'darwin') {
+    intervalDarwin = intervalDarwin || 2000;
+    return fs.watchFile(file, {interval: intervalDarwin}, function(curr, prev) {
+      if (curr.mtime != prev.mtime)
+        return callback();
+    });
+  } else {
+    return fs.watch(file, function(event, filename) {
+      if (event == 'change')
+        return callback();
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+config.init = function(file) {
+  if (file) {
+    if (!config._file)
+      config._file = file;
+
+    config.reload();
+
+    util.<span class="apidocCodeKeywordSpan">fileOnChanges</span>(config._file, function() {
+      if (config.autoReload)
+        config.reload();
+    });
+  } else {
+    log.warn("using default config..");
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.fileOnChangesWithMinInterval" id="apidoc.element.bell.js.util.fileOnChangesWithMinInterval">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>fileOnChangesWithMinInterval
+        <span class="apidocSignatureSpan">(file, callback, interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fileOnChangesWithMinInterval(file, callback, interval) {
+  interval = interval || 2000;
+
+  if (process.platform == 'darwin') {
+    return fs.watchFile(file, {interval: interval}, function(curr, prev) {
+      if (curr.mtime != prev.mtime)
+        return callback();
+    });
+  } else {
+    var mtime = new Date();
+    return fs.watch(file, function(event, filename) {
+      var mtimeNow = new Date();
+      if (event == 'change' &amp;&amp; ((mtimeNow - mtime) &gt;= interval)) {
+        mtime = mtimeNow;
+        return callback();
+      }
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.fileOnChangesWithMinIntervalAndRunNow" id="apidoc.element.bell.js.util.fileOnChangesWithMinIntervalAndRunNow">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>fileOnChangesWithMinIntervalAndRunNow
+        <span class="apidocSignatureSpan">(file, callback, interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fileOnChangesWithMinIntervalAndRunNow(file, callback, interval) {
+  callback();
+  fileOnChangesWithMinInterval(file, callback, interval);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Sync projects on dbfile changes.
+* @param {Function} cb
+* @param {Number} milliSeconds
+*/
+function syncProjectsOnDBFileChanges(cb, milliSeconds) {
+ util.<span class="apidocCodeKeywordSpan">fileOnChangesWithMinIntervalAndRunNow</span>(config.sqlite.file, co.wrap(function *() {
+   yield syncProjects();
+   if (cb) cb();
+ }), milliSeconds || consts.syncIntervalDefault);
+}
+
+/**
+* Sync rules on dbfile changes.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.format" id="apidoc.element.bell.js.util.format">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>format
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">format = function (f) {
+  if (typeof f !== 'string') {
+    const objects = new Array(arguments.length);
+    for (var index = 0; index &lt; arguments.length; index++) {
+      objects[index] = inspect(arguments[index]);
+    }
+    return objects.join(' ');
+  }
+
+  var argLen = arguments.length;
+
+  if (argLen === 1) return f;
+
+  var str = '';
+  var a = 1;
+  var lastPos = 0;
+  for (var i = 0; i &lt; f.length;) {
+    if (f.charCodeAt(i) === 37/*'%'*/ &amp;&amp; i + 1 &lt; f.length) {
+      switch (f.charCodeAt(i + 1)) {
+        case 100: // 'd'
+          if (a &gt;= argLen)
+            break;
+          if (lastPos &lt; i)
+            str += f.slice(lastPos, i);
+          str += Number(arguments[a++]);
+          lastPos = i = i + 2;
+          continue;
+        case 106: // 'j'
+          if (a &gt;= argLen)
+            break;
+          if (lastPos &lt; i)
+            str += f.slice(lastPos, i);
+          str += tryStringify(arguments[a++]);
+          lastPos = i = i + 2;
+          continue;
+        case 115: // 's'
+          if (a &gt;= argLen)
+            break;
+          if (lastPos &lt; i)
+            str += f.slice(lastPos, i);
+          str += String(arguments[a++]);
+          lastPos = i = i + 2;
+          continue;
+        case 37: // '%'
+          if (lastPos &lt; i)
+            str += f.slice(lastPos, i);
+          str += '%';
+          lastPos = i = i + 2;
+          continue;
+      }
+    }
+    ++i;
+  }
+  if (lastPos === 0)
+    str = f;
+  else if (lastPos &lt; f.length)
+    str += f.slice(lastPos);
+  while (a &lt; argLen) {
+    const x = arguments[a++];
+    if (x === null || (typeof x !== 'object' &amp;&amp; typeof x !== 'symbol')) {
+      str += ' ' + x;
+    } else {
+      str += ' ' + inspect(x);
+    }
+  }
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.inherits" id="apidoc.element.bell.js.util.inherits">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>inherits
+        <span class="apidocSignatureSpan">(ctor, superCtor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inherits = function (ctor, superCtor) {
+
+  if (ctor === undefined || ctor === null)
+    throw new TypeError('The constructor to "inherits" must not be ' +
+                        'null or undefined');
+
+  if (superCtor === undefined || superCtor === null)
+    throw new TypeError('The super constructor to "inherits" must not ' +
+                        'be null or undefined');
+
+  if (superCtor.prototype === undefined)
+    throw new TypeError('The super constructor to "inherits" must ' +
+                        'have a prototype');
+
+  ctor.super_ = superCtor;
+  Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const crons = require('./crons');
+const log = require('./log');
+const models = require('./models');
+const service = require('./service');
+const util = require('./util');
+
+function Alerter() {}
+util.<span class="apidocCodeKeywordSpan">inherits</span>(Alerter, service);
+
+/**
+ * Serve entry.
+ */
+Alerter.prototype.serve = function *() {
+var self = this;
+this.stats = {};  // {name: stamp}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.inspect" id="apidoc.element.bell.js.util.inspect">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>inspect
+        <span class="apidocSignatureSpan">(obj, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function inspect(obj, opts) {
+  // default options
+  var ctx = {
+    seen: [],
+    stylize: stylizeNoColor
+  };
+  // legacy...
+  if (arguments[2] !== undefined) ctx.depth = arguments[2];
+  if (arguments[3] !== undefined) ctx.colors = arguments[3];
+  if (typeof opts === 'boolean') {
+    // legacy...
+    ctx.showHidden = opts;
+  }
+  // Set default and user-specified options
+  ctx = Object.assign({}, inspect.defaultOptions, ctx, opts);
+  if (ctx.colors) ctx.stylize = stylizeWithColor;
+  if (ctx.maxArrayLength === null) ctx.maxArrayLength = Infinity;
+  return formatValue(ctx, obj, ctx.depth);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isArray" id="apidoc.element.bell.js.util.isArray">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isArray
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isArray() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isBoolean" id="apidoc.element.bell.js.util.isBoolean">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isBoolean
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isBoolean(arg) {
+  return typeof arg === 'boolean';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isBuffer" id="apidoc.element.bell.js.util.isBuffer">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isBuffer
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isBuffer(b) {
+  return b instanceof Buffer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isDate" id="apidoc.element.bell.js.util.isDate">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isDate
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isDate(d) {
+  return binding.isDate(d);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isError" id="apidoc.element.bell.js.util.isError">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isError
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isError(e) {
+  return exports.objectToString(e) === '[object Error]' || e instanceof Error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isFunction" id="apidoc.element.bell.js.util.isFunction">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isFunction
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isFunction(arg) {
+  return typeof arg === 'function';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isNull" id="apidoc.element.bell.js.util.isNull">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isNull
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNull(arg) {
+  return arg === null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isNullOrUndefined" id="apidoc.element.bell.js.util.isNullOrUndefined">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isNullOrUndefined
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNullOrUndefined(arg) {
+  return arg === null || arg === undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isNumber" id="apidoc.element.bell.js.util.isNumber">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isNumber
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNumber(arg) {
+  return typeof arg === 'number';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isObject" id="apidoc.element.bell.js.util.isObject">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isObject
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isObject(arg) {
+  return arg !== null &amp;&amp; typeof arg === 'object';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isPrimitive" id="apidoc.element.bell.js.util.isPrimitive">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isPrimitive
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isPrimitive(arg) {
+  return arg === null ||
+         typeof arg !== 'object' &amp;&amp; typeof arg !== 'function';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isRegExp" id="apidoc.element.bell.js.util.isRegExp">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isRegExp
+        <span class="apidocSignatureSpan">(re)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isRegExp(re) {
+  return binding.isRegExp(re);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isString" id="apidoc.element.bell.js.util.isString">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isString
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isString(arg) {
+  return typeof arg === 'string';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isSymbol" id="apidoc.element.bell.js.util.isSymbol">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isSymbol
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSymbol(arg) {
+  return typeof arg === 'symbol';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.isUndefined" id="apidoc.element.bell.js.util.isUndefined">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>isUndefined
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isUndefined(arg) {
+  return arg === undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.join" id="apidoc.element.bell.js.util.join">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>join
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function join() {
+  var result = path.join.apply(this, arguments);
+  return path.normalize(result);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var multi = datapoint[1][2];
+
+var prefix = config.ssdb.prefix;
+var expiration = config.analyzer.expiration;
+
+var zset = prefix + name;
+var hash = prefix + 'trend';
+var key = [data, multi.toFixed(4), time].<span class="apidocCodeKeywordSpan">join</span>(':');
+var val = [trend.toFixed(4), time].join(':');
+
+// parallel write db
+var resps = yield [
+  this.ssdb.acquire().zset(zset, key, time),
+  this.ssdb.acquire().zremrangebyscore(zset, 0, time - expiration),
+  this.ssdb.acquire().hset(hash, name, val)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.loadObjectFromPath" id="apidoc.element.bell.js.util.loadObjectFromPath">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>loadObjectFromPath
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadObjectFromPath(path) {
+  var content = fs.readFileSync(path);
+  return eval('var _; _ = ' + content);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Reload config file.
+ */
+config.reload = function() {
+  assert(config._file);
+  log.info("reading config from %s..", config._file);
+  var conf = util.<span class="apidocCodeKeywordSpan">loadObjectFromPath</span>(config._file);
+  util.updateNestedObjects(config, conf);
+  config.emitter.emit('reload');
+};
+
+config.emitter = new events.EventEmitter();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.log" id="apidoc.element.bell.js.util.log">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.objectLength" id="apidoc.element.bell.js.util.objectLength">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>objectLength
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function objectLength(obj) {
+  return Object.keys(obj).length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ var dict = {}, i;
+
+ for (i = 0; i &lt; list.length; i += 2) {
+   dict[list[i]] = list[i + 1];
+ }
+
+ ctx.trendings = dict;
+ log.info("%dms sync trendings done, %d items", timer.elapsed(), util.<span class="apidocCodeKeywordSpan">objectLength
+</span>(dict));
+ return ctx.trendings;
+}
+
+/**
+* Sync projects from sqlite.
+* @return {Array} ctx.projects
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.patchBeansClient" id="apidoc.element.bell.js.util.patchBeansClient">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>patchBeansClient
+        <span class="apidocSignatureSpan">(c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function patchBeansClient(c) {
+  var reserve = function(cb) {
+    c.reserve(cb);
+  };
+
+  c._reserve = function() {
+    return function(cb) {
+      var _cb = function(e, jid, buf) {
+        cb(e, {
+          id: jid,
+          body: buf.toString()
+        });
+      };
+      reserve.apply(this, [_cb]);
+    };
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Create beanstalk client and patch it.
+*/
+Service.prototype.createBeansClient = function() {
+ var host = config.beanstalkd.host;
+ var port = config.beanstalkd.port;
+ this.beans = new fivebeans.client(host, port);
+ util.<span class="apidocCodeKeywordSpan">patchBeansClient</span>(this.beans);
+ return this;
+};
+
+/**
+* Connect to beanstalkd (yield blocking).
+*
+*   @param {String} action // 'use'/'watch'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.print" id="apidoc.element.bell.js.util.print">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>print
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  warned = exports.printDeprecationMessage(msg, warned, deprecated);
+  if (new.target) {
+    return Reflect.construct(fn, arguments, new.target);
+  }
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.puts" id="apidoc.element.bell.js.util.puts">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>puts
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  warned = exports.printDeprecationMessage(msg, warned, deprecated);
+  if (new.target) {
+    return Reflect.construct(fn, arguments, new.target);
+  }
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.setIntervalAndRunNow" id="apidoc.element.bell.js.util.setIntervalAndRunNow">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>setIntervalAndRunNow
+        <span class="apidocSignatureSpan">(fn, ms)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setIntervalAndRunNow(fn, ms) {
+  fn();
+  return setInterval(fn, ms);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//------------------------------------------
+/**
+* Start `syncTrendings`.
+* @param {Function} cb
+* @param {Number} milliSeconds
+*/
+function startSyncTrendings(cb, milliSeconds) {
+ util.<span class="apidocCodeKeywordSpan">setIntervalAndRunNow</span>(co.wrap(function *() {
+   yield syncTrendings();
+   if (cb) cb();
+ }), milliSeconds || 1000*config.interval);
+}
+
+/**
+* Start `syncProjects`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.startsWith" id="apidoc.element.bell.js.util.startsWith">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>startsWith
+        <span class="apidocSignatureSpan">(s, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function startsWith(s, prefix) {
+  return s.indexOf(prefix) === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.timerStart" id="apidoc.element.bell.js.util.timerStart">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>timerStart
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function timerStart() {
+  var startAt = new Date();
+  startAt.elapsed = function() {
+    return new Date() - startAt;
+  };
+  return startAt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Cron jobs
+//------------------------------------------
+/**
+ * Sync trendings from ssdb.
+ * @return {Object} ctx.trendings
+ */
+function *syncTrendings() {
+var timer = util.<span class="apidocCodeKeywordSpan">timerStart</span>();
+var hash = config.ssdb.prefix + 'trend';
+var list = yield ssdb.acquire().hgetall(hash);
+var dict = {}, i;
+
+for (i = 0; i &lt; list.length; i += 2) {
+  dict[list[i]] = list[i + 1];
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.uniqueArray" id="apidoc.element.bell.js.util.uniqueArray">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>uniqueArray
+        <span class="apidocSignatureSpan">(arr, eq)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function uniqueArray(arr, eq) {
+  eq = eq || function(x, y) {
+    return x === y;
+  };
+
+  var ret = [], i, j, a, b, found;
+
+  for (i = 0; i &lt; arr.length; i++) {
+    a = arr[i];
+    found = false;
+    for (j = 0; j &lt; ret.length; j++) {
+      b = ret[j];
+      if (eq(a, b)) {
+        found = true;
+      }
+    }
+    if (!found)
+      ret.push(a);
+  }
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ id = validators.validateProjectId(id);
+ var project = yield models.Project.findById(id);
+ if (!project)
+   throw errors.ErrProjectNotFound;
+ var receivers = yield project.getReceivers();
+ var universals = yield models.Receiver.findAll({where: {universal: true}});
+ [].unshift.apply(receivers, universals);
+ this.body = util.<span class="apidocCodeKeywordSpan">uniqueArray</span>(receivers, function(a, b) {
+   return a.id === b.id;
+ });
+}
+
+/**
+* Get rules by project id.
+* @api /api/admin/project/:id/rules
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.updateNestedObjects" id="apidoc.element.bell.js.util.updateNestedObjects">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>updateNestedObjects
+        <span class="apidocSignatureSpan">(obj, other)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function updateNestedObjects(obj, other) {
+  var tmp, key, val;
+
+  for (key in other) {
+    if (other.hasOwnProperty(key)) {
+      val = other[key];
+      if (val !== null &amp;&amp; typeof val === 'object' &amp;&amp; !(val instanceof Array)) {
+        // val is an object
+        if (obj[key] === undefined) {
+          tmp = obj[key] = {};
+        } else {
+          tmp = obj[key];
+        }
+        updateNestedObjects(tmp, val);
+      } else {
+        obj[key] = val;
+      }
+    }
+  }
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Reload config file.
+ */
+config.reload = function() {
+  assert(config._file);
+  log.info("reading config from %s..", config._file);
+  var conf = util.loadObjectFromPath(config._file);
+  util.<span class="apidocCodeKeywordSpan">updateNestedObjects</span>(config, conf);
+  config.emitter.emit('reload');
+};
+
+config.emitter = new events.EventEmitter();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.urlDecode" id="apidoc.element.bell.js.util.urlDecode">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>urlDecode
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function urlDecode(s) {
+  return url.parse(s, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.urlEncode" id="apidoc.element.bell.js.util.urlEncode">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>urlEncode
+        <span class="apidocSignatureSpan">(path, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function urlEncode(path, params) {
+  if (!params)
+    return path;
+  var s = path + '?' + urlParamsEncode(params);
+  return s.replace(/\?$/g, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+module.exports = function(route, params) {
+  var s;
+  if (config.webapp.root) {
+    s = util.join('/', config.webapp.root, route);
+  } else {
+    s = util.join('/', route);
+  }
+  return util.<span class="apidocCodeKeywordSpan">urlEncode</span>(s, params);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.util.urlParamsEncode" id="apidoc.element.bell.js.util.urlParamsEncode">
+        function <span class="apidocSignatureSpan">bell.js.util.</span>urlParamsEncode
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function urlParamsEncode(params) {
+  var pairs = [], key, val, item;
+  for (key in params) {
+    val = params[key];
+    item = [encodeURIComponent(key), encodeURIComponent(val)];
+    pairs.push(item.join('='));
+  }
+  return pairs.join('&amp;');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.validators" id="apidoc.module.bell.js.validators">module bell.js.validators</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateEmail" id="apidoc.element.bell.js.validators.validateEmail">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateEmail
+        <span class="apidocSignatureSpan">(email)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateEmail = function (email) {
+  if (email.indexOf('@') &lt;= 0)
+    throw errors.ErrEmail;
+  return email.trim();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Boolean} enablePhone
+ * @return {Receiver}
+ * @throws ErrReceiver..
+ */
+function *create() {
+var data = {};
+data.name = validators.validateReceiverName(this.request.body.name);
+data.email = validators.<span class="apidocCodeKeywordSpan">validateEmail</span>(this.request.body.email);
+data.phone = validators.validatePhone(this.request.body.phone);
+data.universal = validators.validateReceiverUniversal(this.request.body.universal);
+data.enableEmail = validators.validateReceiverEnableEmail(this.request.body.enableEmail);
+data.enablePhone = validators.validateReceiverEnablePhone(this.request.body.enablePhone);
+try {
+  this.body = yield models.Receiver.create(data);
+} catch(err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validatePhone" id="apidoc.element.bell.js.validators.validatePhone">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validatePhone
+        <span class="apidocSignatureSpan">(phone)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validatePhone = function (phone) {
+  if (phone.match(/^\d{10,11}/)) {
+    return phone.trim();
+  }
+  throw errors.ErrPhone;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @return {Receiver}
+ * @throws ErrReceiver..
+ */
+function *create() {
+var data = {};
+data.name = validators.validateReceiverName(this.request.body.name);
+data.email = validators.validateEmail(this.request.body.email);
+data.phone = validators.<span class="apidocCodeKeywordSpan">validatePhone</span>(this.request.body.phone);
+data.universal = validators.validateReceiverUniversal(this.request.body.universal);
+data.enableEmail = validators.validateReceiverEnableEmail(this.request.body.enableEmail);
+data.enablePhone = validators.validateReceiverEnablePhone(this.request.body.enablePhone);
+try {
+  this.body = yield models.Receiver.create(data);
+} catch(err) {
+  if (err instanceof Sequelize.UniqueConstraintError) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateProjectId" id="apidoc.element.bell.js.validators.validateProjectId">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateProjectId
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateProjectId = function (id) {
+  id = +id;
+  if (isNaN(id) || id &lt; 0)
+    throw errors.ErrProjectId;
+  return id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Get project by id (with rules)
+ * @param {Number} id
+ * @return {Project}
+ * @throws ErrProjectId/ErrProjectNotFound
+ */
+function *getProjectById(id) {
+ id = validators.<span class="apidocCodeKeywordSpan">validateProjectId</span>(id);
+  var project = yield models.Project.findById(id);
+  if (!project)
+    throw errors.ErrProjectNotFound;
+  project.rules = yield project.getRules();
+  return project;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateProjectName" id="apidoc.element.bell.js.validators.validateProjectName">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateProjectName
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateProjectName = function (name) {
+  name = name || '';
+  name = name.trim();
+  if (name.length === 0)
+    throw errors.ErrProjectName;
+  return name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @method POST
+ * @param {String} name
+ * @return {Project}
+ * @throws ErrProjectDuplicateName/ErrProjectName
+ */
+function *create() {
+var name = this.request.body.name;
+name = validators.<span class="apidocCodeKeywordSpan">validateProjectName</span>(name);
+try {
+  this.body = yield models.Project.create({name: name});
+} catch(err) {
+  if (err instanceof Sequelize.UniqueConstraintError)
+    throw errors.ErrProjectDuplicateName;
+  throw err;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateReceiverEnableEmail" id="apidoc.element.bell.js.validators.validateReceiverEnableEmail">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverEnableEmail
+        <span class="apidocSignatureSpan">(enableEmail)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateReceiverEnableEmail = function (enableEmail) {
+  if (typeof enableEmail === 'undefined')
+    enableEmail = false;
+  if (typeof enableEmail !== 'boolean')
+    throw errors.ErrReceiverEnableEmail;
+  return enableEmail;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+function *create() {
+var data = {};
+data.name = validators.validateReceiverName(this.request.body.name);
+data.email = validators.validateEmail(this.request.body.email);
+data.phone = validators.validatePhone(this.request.body.phone);
+data.universal = validators.validateReceiverUniversal(this.request.body.universal);
+data.enableEmail = validators.<span class="apidocCodeKeywordSpan">validateReceiverEnableEmail</span>(this.request.body.enableEmail
+);
+data.enablePhone = validators.validateReceiverEnablePhone(this.request.body.enablePhone);
+try {
+  this.body = yield models.Receiver.create(data);
+} catch(err) {
+  if (err instanceof Sequelize.UniqueConstraintError) {
+    switch(err.fields[0]) {
+        case 'name':
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateReceiverEnablePhone" id="apidoc.element.bell.js.validators.validateReceiverEnablePhone">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverEnablePhone
+        <span class="apidocSignatureSpan">(enablePhone)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateReceiverEnablePhone = function (enablePhone) {
+  if (typeof enablePhone === 'undefined')
+    enablePhone = false;
+  if (typeof enablePhone !== 'boolean')
+    throw errors.ErrReceiverEnablePhone;
+  return enablePhone;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function *create() {
+var data = {};
+data.name = validators.validateReceiverName(this.request.body.name);
+data.email = validators.validateEmail(this.request.body.email);
+data.phone = validators.validatePhone(this.request.body.phone);
+data.universal = validators.validateReceiverUniversal(this.request.body.universal);
+data.enableEmail = validators.validateReceiverEnableEmail(this.request.body.enableEmail);
+data.enablePhone = validators.<span class="apidocCodeKeywordSpan">validateReceiverEnablePhone</span>(this.request.body.enablePhone
+);
+try {
+  this.body = yield models.Receiver.create(data);
+} catch(err) {
+  if (err instanceof Sequelize.UniqueConstraintError) {
+    switch(err.fields[0]) {
+        case 'name':
+            throw errors.ErrReceiverDuplicateName;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateReceiverId" id="apidoc.element.bell.js.validators.validateReceiverId">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverId
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateReceiverId = function (id) {
+  id = +id;
+  if (isNaN(id) || id &lt; 0)
+    throw errors.ErrReceiverId;
+  return id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Number} projectId
+ * @param {Number} receiverId
+ * @return NoContent
+ * @throws ErrProjectNotFound/ErrProjectId..
+ */
+function *remove(projectId, receiverId) {
+projectId = validators.validateProjectId(projectId);
+receiverId = validators.<span class="apidocCodeKeywordSpan">validateReceiverId</span>(receiverId);
+var project = yield models.Project.findById(projectId);
+if (!project)
+  throw errors.ErrProjectNotFound;
+var receiver = yield models.Receiver.findById(receiverId);
+if (!receiver)
+  throw errors.ErrReceiverNotFound;
+var num = yield project.removeReceiver(receiver);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateReceiverName" id="apidoc.element.bell.js.validators.validateReceiverName">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverName
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateReceiverName = function (name) {
+  name = name || '';
+  name = name.trim();
+  if (name.length === 0)
+    throw errors.ErrReceiverName;
+  return name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Boolean} enableEmail
+ * @param {Boolean} enablePhone
+ * @return {Receiver}
+ * @throws ErrReceiver..
+ */
+function *create() {
+var data = {};
+data.name = validators.<span class="apidocCodeKeywordSpan">validateReceiverName</span>(this.request.body.name);
+data.email = validators.validateEmail(this.request.body.email);
+data.phone = validators.validatePhone(this.request.body.phone);
+data.universal = validators.validateReceiverUniversal(this.request.body.universal);
+data.enableEmail = validators.validateReceiverEnableEmail(this.request.body.enableEmail);
+data.enablePhone = validators.validateReceiverEnablePhone(this.request.body.enablePhone);
+try {
+  this.body = yield models.Receiver.create(data);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateReceiverUniversal" id="apidoc.element.bell.js.validators.validateReceiverUniversal">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateReceiverUniversal
+        <span class="apidocSignatureSpan">(universal)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateReceiverUniversal = function (universal) {
+  if (typeof universal === 'undefined')
+    universal = false;
+  if (typeof universal !== 'boolean')
+    throw errors.ErrReceiverUniversal;
+  return universal;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @throws ErrReceiver..
+ */
+function *create() {
+var data = {};
+data.name = validators.validateReceiverName(this.request.body.name);
+data.email = validators.validateEmail(this.request.body.email);
+data.phone = validators.validatePhone(this.request.body.phone);
+data.universal = validators.<span class="apidocCodeKeywordSpan">validateReceiverUniversal</span>(this.request.body.universal);
+data.enableEmail = validators.validateReceiverEnableEmail(this.request.body.enableEmail);
+data.enablePhone = validators.validateReceiverEnablePhone(this.request.body.enablePhone);
+try {
+  this.body = yield models.Receiver.create(data);
+} catch(err) {
+  if (err instanceof Sequelize.UniqueConstraintError) {
+    switch(err.fields[0]) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateRuleContent" id="apidoc.element.bell.js.validators.validateRuleContent">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateRuleContent
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateRuleContent = function (data) {
+  if (typeof data.up !== 'boolean' ||
+      typeof data.down !== 'boolean' ||
+      (data.min !== null &amp;&amp; typeof data.min !== 'number') ||
+        (data.max !== null &amp;&amp; typeof data.max !== 'number'))
+        throw errors.ErrRuleContent;
+  if (!data.up &amp;&amp; !data.down)
+    throw errors.ErrRuleTrend;
+   return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @throws ErrProjectNotFound/ErrProjectId/ErrRuleContent
+ */
+function *add(id) {
+id = validators.validateProjectId(id);
+var project = yield models.Project.findById(id);
+if (!project)
+  throw errors.ErrProjectNotFound;
+var data = validators.<span class="apidocCodeKeywordSpan">validateRuleContent</span>(this.request.body);
+data.pattern = validators.validateRulePattern(data.pattern);
+try {
+  this.body = yield project.createRule(data);
+} catch(err) {
+  if (err instanceof Sequelize.UniqueConstraintError)
+    throw errors.ErrRuleDuplicatePattern;
+  throw err;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateRuleId" id="apidoc.element.bell.js.validators.validateRuleId">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateRuleId
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateRuleId = function (id) {
+  id = +id;
+  if (isNaN(id) || id &lt; 0)
+    throw errors.ErrRuleId;
+  return id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.validators.validateRulePattern" id="apidoc.element.bell.js.validators.validateRulePattern">
+        function <span class="apidocSignatureSpan">bell.js.validators.</span>validateRulePattern
+        <span class="apidocSignatureSpan">(pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateRulePattern = function (pattern) {
+  pattern = pattern || '';
+  pattern = pattern.trim();
+  if (pattern.length === 0)
+    throw errors.ErrRulePattern;
+  return pattern;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+function *add(id) {
+id = validators.validateProjectId(id);
+var project = yield models.Project.findById(id);
+if (!project)
+  throw errors.ErrProjectNotFound;
+var data = validators.validateRuleContent(this.request.body);
+data.pattern = validators.<span class="apidocCodeKeywordSpan">validateRulePattern</span>(data.pattern);
+try {
+  this.body = yield project.createRule(data);
+} catch(err) {
+  if (err instanceof Sequelize.UniqueConstraintError)
+    throw errors.ErrRuleDuplicatePattern;
+  throw err;
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.js.views" id="apidoc.module.bell.js.views">module bell.js.views</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.js.views.register" id="apidoc.element.bell.js.views.register">
+        function <span class="apidocSignatureSpan">bell.js.views.</span>register
+        <span class="apidocSignatureSpan">(service)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (service) {
+  service.app.use(route.get(url('/'), index));
+  service.app.use(route.get(url('/admin'), admin));
+  service.app.use(route.get(url('/admin/config'), config));
+  service.app.use(route.get(url('/admin/project'), project));
+  service.app.use(route.get(url('/admin/project/:id'), projectEdit));
+  service.app.use(route.get(url('/admin/receiver'), receiver));
+  service.app.use(route.get(url('/admin/receiver/:id'), receiverEdit));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// reload sender on config reloading
+config.emitter.on('reload', function() {
+  if (self.sender)
+    delete require.cache[require.resolve(config.alerter.sender)];
+  self.loadSender();
+});
+this.createSequelize();
+models.<span class="apidocCodeKeywordSpan">register</span>(this.sequelize);
+crons.register(this);
+this.createSocketServer(config.alerter.port, function(item) {
+  self.send({
+    name: item[0][0],
+    stamp: item[0][1][0],
+    value: item[0][1][1],
+    trend: item[1],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
